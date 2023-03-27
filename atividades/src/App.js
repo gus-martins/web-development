@@ -6,6 +6,7 @@ import './App.css';
 // import { Header, Body, Footer } from "./components/atividade00/04Multiplo";
 // import * as Site from "./components/atividade00/04Multiplo";
 import * as Loja from "./components/atividade00/05Children";
+// import FunctionA from './components/atividade00/hierarquia/FunctionA';
 
 
 function App() {
@@ -22,9 +23,9 @@ function App() {
       <Site.Footer /> */}
       <Loja.Supermercado nome="Dinal">
         <Loja.Legume nome="Batata" />
-        <Loja.Legume nome="Beterraba" />
+        <Loja.Bebida nome="Ypioca" />
       </Loja.Supermercado>
-
+      {/* <FunctionA /> */}
     </div>
   );
 }

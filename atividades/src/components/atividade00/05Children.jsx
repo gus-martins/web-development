@@ -1,11 +1,37 @@
-const Supermercado = ({ props }) => {
+import { Children } from "react"
+
+// V0
+// const Supermercado = (props) => {
+//     return (
+//         <div>
+//             <h2>Supermercado: {props.nome}</h2>
+//             {props.children}
+//         </div>
+//     )
+// }
+
+//V1
+const Supermercado = ({ children, nome }) => {
     return (
         <div>
-            <h2>Supermercado: {props.nome}</h2>
-            {props.children}
+            <h2>Supermercado: {nome}</h2>
+            {
+                Children.map(
+                    children,
+                    (filho) => {
+                        return (
+                            <div style={{ backgroundColor: "red" }}>
+                                {filho}
+                            </div>
+                        )
+                    }
+                )
+            }
         </div>
     )
 }
+
+
 
 const Legume = ({ nome }) => {
     return (
