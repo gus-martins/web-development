@@ -1,6 +1,19 @@
 .App {
   text-align: center;
-  background-color: antiquewhite;
+}
+
+.bordas {
+  border: 2px solid black;
+  width: 300px;
+  height: 100px;
+  background-color: snow;
+  border-color: black;
+  border-radius: 10px;
+
+}
+
+.cor {
+  background-color: rgb(81, 135, 102);
 }
 
 .App-logo {
