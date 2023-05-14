@@ -16,20 +16,27 @@ const MyAsync = () => {
 
     useEffect(
         () => {
-            // MyPromise
-            //     .then(
-            //         (data) => { console.log(data.msg) }
-            //     )
-            //     .catch(
-            //         (data) => { console.log(data.msg) }
-            //     )
 
-            getPromise()
+            getPromiseAsync()
 
         }, []
     )
 
-    async function getPromise() {
+    function getPromise() {
+        MyPromise
+            .then(
+                (response) => {
+                    console.log(response.msg)
+                }
+            )
+            .catch(
+                (error) => {
+                    console.log(error.msg)
+                }
+            )
+    }
+
+    async function getPromiseAsync() {
         try {
             const response = await MyPromise
             console.log(response.msg)
