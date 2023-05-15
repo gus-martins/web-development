@@ -12,14 +12,11 @@ Exemplificando o uso de Contextos:
 
 ----------------------------------------------
 
-// Definindo um contexto
-import React, { createContext, useContext } from 'react';
+import React, { createContext, useContext } from 'react'; // Definindo um contexto
 
-// Criando o contexto
-const MeuContexto = createContext();
+const MeuContexto = createContext(); // Criando o contexto
 
-// Componente pai que fornece o contexto
-const ComponentePai = () => {
+const ComponentePai = () => { // Componente pai que fornece o contexto
   const DadoCompartilhado = 'Dados compartilhados';
 
   return (
@@ -36,4 +33,4 @@ const ComponenteFilho = () => {
   return <p>{DadoCompartilhado}</p>;
 };
 
-------------------------------------
+--------------------------------------

@@ -5,7 +5,7 @@ const Questao03 = () => {
     const [menorPop, setMenorPop] = useState(""); // Variável de estado para controlar a menor população
 
     useEffect(() => {
-        fetch("https://restcountries.com/v3.1/region/europe?fields=capital,population")
+        fetch("https://restcountries.com/v3.1/region/europe?fields=capital,population") // Requisição GET para a API
             .then(
                 (response) => { // Retorna uma Promise
                     return response.json() // Retorna um objeto JSON caso a Promise seja resolvida
