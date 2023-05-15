@@ -1,0 +1,39 @@
+O "Props Drilling" ocorre quando precisamos passar dados via props através de vários níveis de componentes em uma aplicação, isso pode ocasionar no "Props Drilling",
+que é quando as propriedades que estamos passando via props acabam "vazando" do componente Pai para os filhos, desencadeando diversos problemas no código futuramente.
+Isso pode tornar o código mais complexo e difícil de manter, pois cada componente intermediário precisa receber as props e repassá-las para os componentes abaixo na hierarquia.
+
+Uma maneira de resolver esse problema é usando Contextos. Contextos são uma funcionalidade do React que permite 
+compartilhar dados entre componentes sem a necessidade de passá-los explicitamente através das props, utilizando o metodo useContext. Com o uso de contextos, 
+podemos definir um "contexto" no componente pai e fornecer os dados que desejamos compartilhar. 
+Em seguida, qualquer componente Filho que esteja dentro desse contexto pode acessar esses dados diretamente, sem a necessidade de props intermediárias e de passar por outros componentes Filho,
+que não utilizam esses dados.
+
+Exemplificando o uso de Contextos:
+
+----------------------------------------------
+
+// Definindo um contexto
+import React, { createContext, useContext } from 'react';
+
+// Criando o contexto
+const MeuContexto = createContext();
+
+// Componente pai que fornece o contexto
+const ComponentePai = () => {
+  const DadoCompartilhado = 'Dados compartilhados';
+
+  return (
+    <MeuContexto.Provider value={DadoCompartilhado}> // utilizando o provider para passar o dado que queremos compartilhar como parametro em "value"
+      <ComponenteFilho />
+    </MeuContexto.Provider>
+  );
+};
+
+// Componente filho que acessa o contexto
+const ComponenteFilho = () => {
+  const DadoCompartilhado = useContext(MeuContexto); //utilizando o useContext para acessar o dado compartilhado diretamente
+
+  return <p>{DadoCompartilhado}</p>;
+};
+
+------------------------------------

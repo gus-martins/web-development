@@ -3,7 +3,7 @@ import './App.css';
 // import MyProps from './components/MyProps';
 // import Calculadora from './components/calculadora';
 // import HelloWorld from './components/helloworld';
-import FunctionEstados from './components/10Estados/FunctionEstados';
+import FunctionEstados from './components/09Estados/FunctionEstados';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       {/* <MyProps
         nome='gustavo'
         curso="CC" /> */}
-      <FunctionEstados />
+      {/* <FunctionEstados /> */}
     </div>
   );
 }
